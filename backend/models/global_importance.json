@@ -266,231 +266,236 @@
       {
         "feature": "Typical Chest Pain",
         "label": "Typical chest pain",
-        "importance": 0.0788
+        "importance": 0.116
       },
       {
         "feature": "EF-TTE",
         "label": "Ejection fraction (pumping strength)",
-        "importance": 0.0467
+        "importance": 0.068
       },
       {
         "feature": "Region RWMA",
         "label": "Regions with wall-motion abnormality",
-        "importance": 0.0426
+        "importance": 0.0607
       },
       {
         "feature": "Age",
         "label": "Age",
-        "importance": 0.0355
+        "importance": 0.0523
       },
       {
         "feature": "Atypical",
         "label": "Atypical chest pain",
-        "importance": 0.0307
+        "importance": 0.0451
       },
       {
         "feature": "ESR",
         "label": "ESR (inflammation marker)",
-        "importance": 0.0167
+        "importance": 0.0245
       },
       {
         "feature": "Neut",
         "label": "Neutrophils",
-        "importance": 0.0154
+        "importance": 0.0225
       },
       {
         "feature": "Lymph",
         "label": "Lymphocytes",
-        "importance": 0.0137
+        "importance": 0.0203
       },
       {
         "feature": "TG",
         "label": "Triglycerides",
-        "importance": 0.0127
+        "importance": 0.019
       },
       {
         "feature": "BP",
         "label": "Blood pressure",
-        "importance": 0.0111
+        "importance": 0.0162
       },
       {
         "feature": "FBS",
         "label": "Fasting blood sugar",
-        "importance": 0.0108
+        "importance": 0.016
       },
       {
         "feature": "Tinversion",
         "label": "T-wave inversion",
-        "importance": 0.0106
+        "importance": 0.0155
       },
       {
         "feature": "PR",
         "label": "Pulse rate",
-        "importance": 0.0103
+        "importance": 0.0152
       },
       {
         "feature": "WBC",
         "label": "White blood cells",
-        "importance": 0.0102
+        "importance": 0.0151
       },
       {
         "feature": "BMI",
         "label": "Body mass index",
-        "importance": 0.0098
+        "importance": 0.0146
       },
       {
         "feature": "Na",
         "label": "Sodium",
-        "importance": 0.0084
+        "importance": 0.0126
       },
       {
         "feature": "HTN",
         "label": "High blood pressure (hypertension)",
-        "importance": 0.0081
+        "importance": 0.0121
       },
       {
         "feature": "LDL",
         "label": "LDL cholesterol",
-        "importance": 0.0078
+        "importance": 0.0118
       },
       {
         "feature": "PLT",
         "label": "Platelets",
-        "importance": 0.0077
+        "importance": 0.0115
       },
       {
         "feature": "HDL",
         "label": "HDL cholesterol",
-        "importance": 0.0077
+        "importance": 0.0114
       },
       {
         "feature": "St Depression",
         "label": "ST depression",
-        "importance": 0.0068
+        "importance": 0.0104
       },
       {
         "feature": "Sex",
         "label": "Sex",
-        "importance": 0.0067
+        "importance": 0.0099
       },
       {
         "feature": "CR",
         "label": "Creatinine",
-        "importance": 0.0064
+        "importance": 0.0096
       },
       {
         "feature": "K",
         "label": "Potassium",
-        "importance": 0.0061
+        "importance": 0.009
       },
       {
         "feature": "HB",
         "label": "Hemoglobin",
-        "importance": 0.0048
+        "importance": 0.0073
       },
       {
         "feature": "BUN",
         "label": "Blood urea nitrogen",
-        "importance": 0.0045
+        "importance": 0.0067
       },
       {
         "feature": "Nonanginal",
         "label": "Non-anginal chest pain",
-        "importance": 0.0042
+        "importance": 0.0063
       },
       {
         "feature": "Dyspnea",
         "label": "Shortness of breath",
-        "importance": 0.0032
+        "importance": 0.0047
       },
       {
         "feature": "VHD",
         "label": "Valve disease",
-        "importance": 0.0031
+        "importance": 0.0046
       },
       {
         "feature": "Obesity",
         "label": "Obesity",
-        "importance": 0.0024
+        "importance": 0.0036
       },
       {
         "feature": "Function Class",
         "label": "Functional class (symptom limits)",
-        "importance": 0.0024
+        "importance": 0.0036
       },
       {
         "feature": "DM",
         "label": "Diabetes",
-        "importance": 0.0023
+        "importance": 0.0034
       },
       {
         "feature": "DLP",
         "label": "High blood fats (dyslipidemia)",
-        "importance": 0.002
+        "importance": 0.0029
       },
       {
         "feature": "Current Smoker",
         "label": "Current smoker",
-        "importance": 0.0018
+        "importance": 0.0028
       },
       {
         "feature": "FH",
         "label": "Family history of heart disease",
-        "importance": 0.0016
+        "importance": 0.0024
       },
       {
         "feature": "Q Wave",
         "label": "Q wave",
-        "importance": 0.0007
+        "importance": 0.001
       },
       {
         "feature": "St Elevation",
         "label": "ST elevation",
-        "importance": 0.0007
+        "importance": 0.001
       },
       {
         "feature": "Diastolic Murmur",
         "label": "Diastolic heart murmur",
-        "importance": 0.0006
+        "importance": 0.0009
       },
       {
         "feature": "Systolic Murmur",
         "label": "Systolic heart murmur",
-        "importance": 0.0005
+        "importance": 0.0008
       },
       {
         "feature": "Edema",
         "label": "Swelling (edema)",
-        "importance": 0.0004
-      },
-      {
-        "feature": "Lung rales",
-        "label": "Crackles in lungs (rales)",
-        "importance": 0.0003
+        "importance": 0.0007
       },
       {
         "feature": "Thyroid Disease",
         "label": "Thyroid disease",
-        "importance": 0.0003
+        "importance": 0.0005
+      },
+      {
+        "feature": "Lung rales",
+        "label": "Crackles in lungs (rales)",
+        "importance": 0.0005
       },
       {
         "feature": "Weak Peripheral Pulse",
         "label": "Weak pulse in limbs",
-        "importance": 0.0003
+        "importance": 0.0004
       },
       {
         "feature": "CVA",
         "label": "Previous stroke",
-        "importance": 0.0002
+        "importance": 0.0003
       },
       {
         "feature": "Poor R Progression",
         "label": "Poor R-wave progression",
-        "importance": 0.0002
+        "importance": 0.0003
       },
       {
         "feature": "LVH",
         "label": "Thickened heart wall (LVH)",
+        "importance": 0.0003
+      },
+      {
+        "feature": "BBB",
+        "label": "Bundle branch block",
         "importance": 0.0002
       },
       {
@@ -499,14 +504,9 @@
         "importance": 0.0002
       },
       {
-        "feature": "BBB",
-        "label": "Bundle branch block",
-        "importance": 0.0002
-      },
-      {
         "feature": "EX-Smoker",
         "label": "Ex-smoker",
-        "importance": 0.0001
+        "importance": 0.0002
       },
       {
         "feature": "LowTH Ang",
@@ -528,197 +528,197 @@
       {
         "feature": "Age",
         "label": "Age",
-        "importance": 0.054
+        "importance": 0.0694
       },
       {
         "feature": "Typical Chest Pain",
         "label": "Typical chest pain",
-        "importance": 0.0415
+        "importance": 0.053
       },
       {
         "feature": "PLT",
         "label": "Platelets",
-        "importance": 0.0251
+        "importance": 0.0323
       },
       {
         "feature": "TG",
         "label": "Triglycerides",
-        "importance": 0.025
+        "importance": 0.0322
       },
       {
         "feature": "CR",
         "label": "Creatinine",
-        "importance": 0.0246
+        "importance": 0.0319
       },
       {
         "feature": "FBS",
         "label": "Fasting blood sugar",
-        "importance": 0.0207
+        "importance": 0.0267
       },
       {
         "feature": "BP",
         "label": "Blood pressure",
-        "importance": 0.0174
+        "importance": 0.0223
       },
       {
         "feature": "Na",
         "label": "Sodium",
-        "importance": 0.0135
+        "importance": 0.0175
       },
       {
         "feature": "BUN",
         "label": "Blood urea nitrogen",
-        "importance": 0.0129
+        "importance": 0.0166
       },
       {
         "feature": "LDL",
         "label": "LDL cholesterol",
-        "importance": 0.011
+        "importance": 0.0143
       },
       {
         "feature": "HDL",
         "label": "HDL cholesterol",
-        "importance": 0.0109
-      },
-      {
-        "feature": "EF-TTE",
-        "label": "Ejection fraction (pumping strength)",
-        "importance": 0.0102
+        "importance": 0.0143
       },
       {
         "feature": "ESR",
         "label": "ESR (inflammation marker)",
-        "importance": 0.0102
+        "importance": 0.0131
+      },
+      {
+        "feature": "EF-TTE",
+        "label": "Ejection fraction (pumping strength)",
+        "importance": 0.0131
       },
       {
         "feature": "HB",
         "label": "Hemoglobin",
-        "importance": 0.01
+        "importance": 0.0129
       },
       {
         "feature": "Sex",
         "label": "Sex",
-        "importance": 0.0094
+        "importance": 0.0124
       },
       {
         "feature": "BMI",
         "label": "Body mass index",
-        "importance": 0.0094
+        "importance": 0.0122
       },
       {
         "feature": "Lymph",
         "label": "Lymphocytes",
-        "importance": 0.009
+        "importance": 0.0116
       },
       {
         "feature": "WBC",
         "label": "White blood cells",
-        "importance": 0.0086
+        "importance": 0.0112
       },
       {
         "feature": "K",
         "label": "Potassium",
-        "importance": 0.0084
+        "importance": 0.0108
       },
       {
         "feature": "Region RWMA",
         "label": "Regions with wall-motion abnormality",
-        "importance": 0.008
+        "importance": 0.0103
       },
       {
         "feature": "Neut",
         "label": "Neutrophils",
-        "importance": 0.0071
+        "importance": 0.0092
       },
       {
         "feature": "HTN",
         "label": "High blood pressure (hypertension)",
-        "importance": 0.007
+        "importance": 0.0091
       },
       {
         "feature": "Atypical",
         "label": "Atypical chest pain",
-        "importance": 0.006
+        "importance": 0.0076
       },
       {
         "feature": "DM",
         "label": "Diabetes",
-        "importance": 0.0055
+        "importance": 0.0071
       },
       {
         "feature": "Tinversion",
         "label": "T-wave inversion",
-        "importance": 0.0038
+        "importance": 0.0049
       },
       {
         "feature": "Function Class",
         "label": "Functional class (symptom limits)",
-        "importance": 0.0037
+        "importance": 0.0049
       },
       {
         "feature": "Current Smoker",
         "label": "Current smoker",
-        "importance": 0.0036
+        "importance": 0.0046
       },
       {
         "feature": "PR",
         "label": "Pulse rate",
-        "importance": 0.0032
+        "importance": 0.0042
       },
       {
         "feature": "VHD",
         "label": "Valve disease",
-        "importance": 0.0025
+        "importance": 0.0032
       },
       {
         "feature": "DLP",
         "label": "High blood fats (dyslipidemia)",
-        "importance": 0.0025
+        "importance": 0.0032
       },
       {
         "feature": "Dyspnea",
         "label": "Shortness of breath",
-        "importance": 0.0021
+        "importance": 0.0027
       },
       {
         "feature": "EX-Smoker",
         "label": "Ex-smoker",
-        "importance": 0.0017
+        "importance": 0.0023
       },
       {
         "feature": "FH",
         "label": "Family history of heart disease",
-        "importance": 0.0016
+        "importance": 0.002
       },
       {
         "feature": "Obesity",
         "label": "Obesity",
-        "importance": 0.0013
+        "importance": 0.0017
       },
       {
         "feature": "St Depression",
         "label": "ST depression",
-        "importance": 0.0011
+        "importance": 0.0014
       },
       {
         "feature": "Systolic Murmur",
         "label": "Systolic heart murmur",
-        "importance": 0.001
+        "importance": 0.0013
       },
       {
         "feature": "Airway disease",
         "label": "Airway disease",
-        "importance": 0.0009
+        "importance": 0.0011
       },
       {
         "feature": "Q Wave",
         "label": "Q wave",
-        "importance": 0.0007
+        "importance": 0.0009
       },
       {
         "feature": "LVH",
         "label": "Thickened heart wall (LVH)",
-        "importance": 0.0004
+        "importance": 0.0005
       },
       {
         "feature": "St Elevation",
@@ -728,17 +728,17 @@
       {
         "feature": "Nonanginal",
         "label": "Non-anginal chest pain",
-        "importance": 0.0002
+        "importance": 0.0003
       },
       {
         "feature": "Edema",
         "label": "Swelling (edema)",
-        "importance": 0.0002
+        "importance": 0.0003
       },
       {
         "feature": "CRF",
         "label": "Chronic kidney failure",
-        "importance": 0.0002
+        "importance": 0.0003
       },
       {
         "feature": "Lung rales",
@@ -758,7 +758,7 @@
       {
         "feature": "Diastolic Murmur",
         "label": "Diastolic heart murmur",
-        "importance": 0.0
+        "importance": 0.0001
       },
       {
         "feature": "Weak Peripheral Pulse",

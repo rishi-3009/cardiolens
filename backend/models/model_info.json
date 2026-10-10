@@ -1,5 +1,5 @@
 {
-  "model_version": "2026-10-10-1345",
+  "model_version": "2026-10-10-1413",
   "stages": {
     "1": [
       "Age",
@@ -200,26 +200,47 @@
         "3": "CAD_stage3.joblib",
         "4": "CAD_stage4.joblib",
         "5": "CAD_stage5.joblib"
+      },
+      "range_files": {
+        "1": "CAD_stage1_range.joblib",
+        "2": "CAD_stage2_range.joblib",
+        "3": "CAD_stage3_range.joblib",
+        "4": "CAD_stage4_range.joblib",
+        "5": "CAD_stage5_range.joblib"
       }
     },
     "LAD": {
-      "model": "RandomForest",
+      "model": "CalibratedRandomForest",
       "files": {
         "1": "LAD_stage1.joblib",
         "2": "LAD_stage2.joblib",
         "3": "LAD_stage3.joblib",
         "4": "LAD_stage4.joblib",
         "5": "LAD_stage5.joblib"
+      },
+      "range_files": {
+        "1": "LAD_stage1_range.joblib",
+        "2": "LAD_stage2_range.joblib",
+        "3": "LAD_stage3_range.joblib",
+        "4": "LAD_stage4_range.joblib",
+        "5": "LAD_stage5_range.joblib"
       }
     },
     "LCX": {
-      "model": "RandomForest",
+      "model": "CalibratedRandomForest",
       "files": {
         "1": "LCX_stage1.joblib",
         "2": "LCX_stage2.joblib",
         "3": "LCX_stage3.joblib",
         "4": "LCX_stage4.joblib",
         "5": "LCX_stage5.joblib"
+      },
+      "range_files": {
+        "1": "LCX_stage1_range.joblib",
+        "2": "LCX_stage2_range.joblib",
+        "3": "LCX_stage3_range.joblib",
+        "4": "LCX_stage4_range.joblib",
+        "5": "LCX_stage5_range.joblib"
       }
     },
     "RCA": {
@@ -230,6 +251,13 @@
         "3": "RCA_stage3.joblib",
         "4": "RCA_stage4.joblib",
         "5": "RCA_stage5.joblib"
+      },
+      "range_files": {
+        "1": "RCA_stage1_range.joblib",
+        "2": "RCA_stage2_range.joblib",
+        "3": "RCA_stage3_range.joblib",
+        "4": "RCA_stage4_range.joblib",
+        "5": "RCA_stage5_range.joblib"
       }
     }
   }

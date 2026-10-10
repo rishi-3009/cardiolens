@@ -20,6 +20,7 @@ from pydantic import BaseModel, Field
 from src.config import FEATURES, RISK_BANDS, STAGES, TARGETS, VESSELS, features_up_to, schema
 from src.data import load_dataset, load_raw
 from src.explain import PatientExplainer
+from src.train import predict_interval
 
 MODELS_DIR = Path(__file__).resolve().parent.parent / "models"
 FEATURE_INFO = {f["name"]: f for f in FEATURES}
@@ -66,16 +67,20 @@ def build_samples(X, pipelines):
 async def lifespan(app):
     X, _ = load_dataset()
     info = json.loads((MODELS_DIR / "model_info.json").read_text(encoding="utf-8"))
-    pipelines, explainers = {}, {}
+    pipelines, explainers, ranges = {}, {}, {}
     for target in TARGETS:
         for s in STAGES:
             k = s["stage"]
             pipelines[(target, k)] = joblib.load(MODELS_DIR / f"{target}_stage{k}.joblib")
             explainers[(target, k)] = PatientExplainer(pipelines[(target, k)], X[features_up_to(k)])
+            range_file = MODELS_DIR / f"{target}_stage{k}_range.joblib"
+            if range_file.exists():  # optional: without it, "interval" is null
+                ranges[(target, k)] = joblib.load(range_file)
     state.update(
         model_version=info["model_version"],
         pipelines=pipelines,
         explainers=explainers,
+        ranges=ranges,
         metrics=json.loads((MODELS_DIR / "metrics.json").read_text(encoding="utf-8")),
         global_importance=json.loads((MODELS_DIR / "global_importance.json").read_text(encoding="utf-8")),
         samples=build_samples(X, pipelines),
@@ -190,11 +195,17 @@ def predict(request: PredictRequest):
 
     predictions, explanations = {}, {}
     for target in TARGETS:
-        probability = float(state["pipelines"][(target, stage)].predict_proba(row)[0, 1])
+        pipeline = state["pipelines"][(target, stage)]
+        probability = float(pipeline.predict_proba(row)[0, 1])
         band = band_of(probability)
         kind = "CAD" if target == "CAD" else "vessel"
+        members = state["ranges"].get((target, stage))
+        interval = None
+        if members:  # likely range = middle 80% of 20 models trained on random 80% subsets
+            low, high = predict_interval(pipeline, members, row)[0]
+            interval = [round(float(low), 4), round(float(high), 4)]
         predictions[target] = {"probability": round(probability, 4), "band": band,
-                               "label": LABELS[kind][band], "interval": None}
+                               "label": LABELS[kind][band], "interval": interval}
         explanations[target] = state["explainers"][(target, stage)].explain(row)
 
     vessel_probs = [predictions[v]["probability"] for v in VESSEL_KEYS]

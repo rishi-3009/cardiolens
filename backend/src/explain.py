@@ -16,6 +16,7 @@ from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 
 from src.config import FEATURES, NOMINAL_FEATURES, STAGES, TARGETS, features_up_to
 from src.data import load_dataset
+from src.models import CalibratedForest
 
 MODELS_DIR = Path(__file__).resolve().parent.parent / "models"
 SEED = 42
@@ -49,7 +50,13 @@ class PatientExplainer:
 
         sample = background_raw.sample(min(BACKGROUND_SIZE, len(background_raw)), random_state=SEED)
         background = self.prep.transform(sample)
-        if isinstance(self.model, (RandomForestClassifier, GradientBoostingClassifier)):
+        if isinstance(self.model, CalibratedForest):
+            # Explain the forest inside, then rescale through the calibration (see shap_values)
+            self.explainer = shap.TreeExplainer(self.model.forest_, data=background,
+                                                feature_perturbation="interventional",
+                                                model_output="probability")
+            self.kind = "calibrated_tree"
+        elif isinstance(self.model, (RandomForestClassifier, GradientBoostingClassifier)):
             # Exact and fast for tree models
             self.explainer = shap.TreeExplainer(self.model, data=background,
                                                 feature_perturbation="interventional",
@@ -70,11 +77,13 @@ class PatientExplainer:
     def shap_values(self, rows_raw):
         """Per-input SHAP values (probability units) for a DataFrame of raw inputs -> (base, array)."""
         transformed = self.prep.transform(rows_raw[self.features])
-        if self.kind == "tree":
+        if self.kind in ("tree", "calibrated_tree"):
             values = self.explainer.shap_values(transformed, check_additivity=False)
             values = values[..., 1] if values.ndim == 3 else values  # keep the "positive" class
             base = self.explainer.expected_value
             base = float(np.atleast_1d(base)[-1])
+            if self.kind == "calibrated_tree":
+                base, values = self._rescale_through_calibration(base, values, transformed)
         else:
             result = self.explainer(transformed, silent=True)
             values, base = result.values, float(np.atleast_1d(result.base_values)[0])
@@ -84,6 +93,22 @@ class PatientExplainer:
         for col, feature in enumerate(self.column_to_feature):
             per_feature[:, self.features.index(feature)] += values[:, col]
         return base, per_feature
+
+    def _rescale_through_calibration(self, raw_base, raw_values, transformed):
+        """Forest SHAP values -> calibrated-probability SHAP values that still add up exactly.
+
+        The calibration only stretches/squeezes probabilities (never reorders them), so for each
+        patient we multiply all contributions by the same factor, chosen so they add up to
+        (calibrated prediction - calibrated base). Directions and the ranking of contributions stay the same.
+        """
+        base = float(self.model.calibrate(raw_base))
+        calibrated = self.model.predict_proba(transformed)[:, 1]
+        raw_total = raw_values.sum(axis=1)
+        # When the patient is (almost) exactly average, use the slope of the calibration curve instead
+        slope = (self.model.calibrate(raw_base + 1e-4) - base) / 1e-4
+        near_zero = np.abs(raw_total) < 1e-3
+        scale = np.where(near_zero, slope, (calibrated - base) / np.where(near_zero, 1.0, raw_total))
+        return base, raw_values * scale[:, None]
 
     def explain(self, row_raw, top_k=TOP_K):
         """Contract-shaped explanation for ONE patient (a 1-row DataFrame)."""
