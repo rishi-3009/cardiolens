@@ -12,6 +12,8 @@ Update this when you start, finish, or get stuck on something. Claude Code agent
 - **Harshavi:** please review `contracts/api-contract.md` v0.2 (changes listed in `docs/decisions.md`).
   New mock files are ready: `contracts/mock-schema.json` (real 52 features, 5 steps) and the updated
   `contracts/mock-predict-response.json`. Freeze as v1.0 together tonight.
+- **Harshavi:** send Rishi your exact GitHub username (or create an account) so you can be added to
+  the private repo https://github.com/rishi-3009/cardiolens. `harshavi0930` doesn't exist on GitHub.
 
 ## Done
 - 2026-10-10 · Project folder, docs, API contract draft, subagents created
