@@ -6,12 +6,17 @@ Update this when you start, finish, or get stuck on something. Claude Code agent
 | Who | Working on | State | Notes |
 |---|---|---|---|
 | Harshavi | Setup + idea | 🟡 in progress | |
-| Rishi | Training pipeline | 🟢 done | Next: SHAP explanations (`src/explain.py`), then the FastAPI app |
+| Rishi | SHAP + FastAPI backend | 🟢 done | All 6 endpoints work locally. Next (Sun): A1 uncertainty ranges, LAD calibration, E-full vessel-count model |
 
 ## Blocked / needs the other person
 - **Harshavi:** accept the GitHub invite to the private repo https://github.com/rishi-3009/cardiolens
   (sent to `harshavi3009`; check email or github.com/notifications), then
   `git clone https://github.com/rishi-3009/cardiolens.git`.
+
+- **Harshavi:** the real backend is ready whenever you want to switch from the mock files.
+  Run it (from `backend/`, venv active): `uvicorn src.api:app --reload` → try it at http://127.0.0.1:8000/docs.
+  Tip: use `http://127.0.0.1:8000` as the API base URL; on Windows `localhost` adds ~0.2 s per request.
+  `interval` is `null` for now (A1 comes Sunday), `vessel_count.distribution` is `null` (E-lite).
 
 ## Done
 - 2026-10-10 · Project folder, docs, API contract draft, subagents created
@@ -21,3 +26,6 @@ Update this when you start, finish, or get stuck on something. Claude Code agent
 - 2026-10-10 · Rishi: leakage-safe training (`python -m src.train`, ~6 min). Repeated stratified 5×10 CV.
   ROC-AUC CAD 0.926 (LogReg), LAD 0.852 (RF), LCX 0.729 (RF), RCA 0.730 (LogReg). 20 models (4 targets × 5 steps)
   + `metrics.json` in `backend/models/`.
+- 2026-10-10 · Rishi: SHAP explanations (`src/explain.py`, probability units, adds up exactly) +
+  global importance; FastAPI app (`src/api.py`) with health/schema/predict/metrics/global-importance/samples.
+  /predict ≈ 0.28 s incl. SHAP for all 4 targets.
