@@ -1,0 +1,368 @@
+{
+  "validation": "Repeated stratified 5-fold CV (10 repeats), n=303. Model type chosen per target on the same CV (small optimistic bias).",
+  "targets": {
+    "CAD": {
+      "model": "LogisticRegression",
+      "accuracy": [
+        0.8621,
+        0.0438
+      ],
+      "precision": [
+        0.8966,
+        0.0383
+      ],
+      "recall": [
+        0.9133,
+        0.0424
+      ],
+      "f1": [
+        0.9041,
+        0.0305
+      ],
+      "roc_auc": [
+        0.9264,
+        0.0329
+      ],
+      "baseline_accuracy": 0.7129,
+      "brier": [
+        0.0989,
+        0.023
+      ],
+      "calibration": [
+        {
+          "predicted": 0.112,
+          "observed": 0.115,
+          "count": 37
+        },
+        {
+          "predicted": 0.293,
+          "observed": 0.304,
+          "count": 34
+        },
+        {
+          "predicted": 0.5,
+          "observed": 0.443,
+          "count": 24
+        },
+        {
+          "predicted": 0.709,
+          "observed": 0.68,
+          "count": 33
+        },
+        {
+          "predicted": 0.945,
+          "observed": 0.96,
+          "count": 176
+        }
+      ],
+      "by_stage": [
+        {
+          "stage": 1,
+          "roc_auc": [
+            0.8022,
+            0.0511
+          ]
+        },
+        {
+          "stage": 2,
+          "roc_auc": [
+            0.9099,
+            0.0413
+          ]
+        },
+        {
+          "stage": 3,
+          "roc_auc": [
+            0.9252,
+            0.0345
+          ]
+        },
+        {
+          "stage": 4,
+          "roc_auc": [
+            0.923,
+            0.0353
+          ]
+        },
+        {
+          "stage": 5,
+          "roc_auc": [
+            0.9264,
+            0.0329
+          ]
+        }
+      ]
+    },
+    "LAD": {
+      "model": "RandomForest",
+      "accuracy": [
+        0.7842,
+        0.04
+      ],
+      "precision": [
+        0.7819,
+        0.0435
+      ],
+      "recall": [
+        0.8804,
+        0.0519
+      ],
+      "f1": [
+        0.8266,
+        0.0311
+      ],
+      "roc_auc": [
+        0.8518,
+        0.0387
+      ],
+      "baseline_accuracy": 0.5842,
+      "brier": [
+        0.1644,
+        0.0117
+      ],
+      "calibration": [
+        {
+          "predicted": 0.16,
+          "observed": 0.034,
+          "count": 9
+        },
+        {
+          "predicted": 0.308,
+          "observed": 0.156,
+          "count": 61
+        },
+        {
+          "predicted": 0.509,
+          "observed": 0.459,
+          "count": 75
+        },
+        {
+          "predicted": 0.697,
+          "observed": 0.796,
+          "count": 114
+        },
+        {
+          "predicted": 0.846,
+          "observed": 0.949,
+          "count": 45
+        }
+      ],
+      "by_stage": [
+        {
+          "stage": 1,
+          "roc_auc": [
+            0.688,
+            0.0557
+          ]
+        },
+        {
+          "stage": 2,
+          "roc_auc": [
+            0.7926,
+            0.0528
+          ]
+        },
+        {
+          "stage": 3,
+          "roc_auc": [
+            0.8011,
+            0.0508
+          ]
+        },
+        {
+          "stage": 4,
+          "roc_auc": [
+            0.8128,
+            0.0477
+          ]
+        },
+        {
+          "stage": 5,
+          "roc_auc": [
+            0.8518,
+            0.0387
+          ]
+        }
+      ]
+    },
+    "LCX": {
+      "model": "RandomForest",
+      "accuracy": [
+        0.6738,
+        0.0466
+      ],
+      "precision": [
+        0.6446,
+        0.1081
+      ],
+      "recall": [
+        0.3862,
+        0.089
+      ],
+      "f1": [
+        0.4782,
+        0.0893
+      ],
+      "roc_auc": [
+        0.729,
+        0.0609
+      ],
+      "baseline_accuracy": 0.6073,
+      "brier": [
+        0.2067,
+        0.0136
+      ],
+      "calibration": [
+        {
+          "predicted": 0.153,
+          "observed": 0.05,
+          "count": 26
+        },
+        {
+          "predicted": 0.309,
+          "observed": 0.26,
+          "count": 130
+        },
+        {
+          "predicted": 0.489,
+          "observed": 0.562,
+          "count": 129
+        },
+        {
+          "predicted": 0.651,
+          "observed": 0.624,
+          "count": 19
+        }
+      ],
+      "by_stage": [
+        {
+          "stage": 1,
+          "roc_auc": [
+            0.6858,
+            0.059
+          ]
+        },
+        {
+          "stage": 2,
+          "roc_auc": [
+            0.6983,
+            0.0616
+          ]
+        },
+        {
+          "stage": 3,
+          "roc_auc": [
+            0.6956,
+            0.0619
+          ]
+        },
+        {
+          "stage": 4,
+          "roc_auc": [
+            0.7311,
+            0.0616
+          ]
+        },
+        {
+          "stage": 5,
+          "roc_auc": [
+            0.729,
+            0.0609
+          ]
+        }
+      ]
+    },
+    "RCA": {
+      "model": "LogisticRegression",
+      "accuracy": [
+        0.6657,
+        0.0623
+      ],
+      "precision": [
+        0.5945,
+        0.1399
+      ],
+      "recall": [
+        0.3923,
+        0.1095
+      ],
+      "f1": [
+        0.4651,
+        0.1046
+      ],
+      "roc_auc": [
+        0.7297,
+        0.0535
+      ],
+      "baseline_accuracy": 0.6238,
+      "brier": [
+        0.2021,
+        0.0163
+      ],
+      "calibration": [
+        {
+          "predicted": 0.135,
+          "observed": 0.122,
+          "count": 67
+        },
+        {
+          "predicted": 0.299,
+          "observed": 0.315,
+          "count": 103
+        },
+        {
+          "predicted": 0.488,
+          "observed": 0.506,
+          "count": 94
+        },
+        {
+          "predicted": 0.682,
+          "observed": 0.662,
+          "count": 33
+        },
+        {
+          "predicted": 0.851,
+          "observed": 0.678,
+          "count": 6
+        }
+      ],
+      "by_stage": [
+        {
+          "stage": 1,
+          "roc_auc": [
+            0.6875,
+            0.0681
+          ]
+        },
+        {
+          "stage": 2,
+          "roc_auc": [
+            0.7094,
+            0.0521
+          ]
+        },
+        {
+          "stage": 3,
+          "roc_auc": [
+            0.7061,
+            0.053
+          ]
+        },
+        {
+          "stage": 4,
+          "roc_auc": [
+            0.7345,
+            0.0541
+          ]
+        },
+        {
+          "stage": 5,
+          "roc_auc": [
+            0.7297,
+            0.0535
+          ]
+        }
+      ]
+    }
+  }
+}

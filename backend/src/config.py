@@ -139,6 +139,10 @@ FEATURES = [
 
 FEATURE_NAMES = [f["name"] for f in FEATURES]
 
+# Categorical features whose options have NO natural order -> one yes/no column per option.
+# All other options are listed in a meaningful order (e.g. VHD none < mild < moderate < severe).
+NOMINAL_FEATURES = ["BBB"]
+
 # Safety checks: fail loudly if a label or dropped column ever sneaks into the inputs
 assert not set(FEATURE_NAMES) & set(FORBIDDEN_INPUTS), "Label column used as an input!"
 assert not set(FEATURE_NAMES) & set(DROPPED_COLUMNS), "Dropped column used as an input!"

@@ -20,3 +20,4 @@ Format: `YYYY-MM-DD · who · decision · why`
 
   All additions are optional fields, so code built on v0.1 still works. · Needed for directions A + D + E.
 - 2026-10-10 · both · **API contract frozen as v1.0** (same content as v0.2). · From now on any change needs a version bump + a line here + telling the other person.
+- 2026-10-10 · Rishi · **Models**: compared LogisticRegression (regularization picked by an inner CV), RandomForest and GradientBoosting per target, using 5×10 repeated stratified CV with the same splits for all. Picked by ROC-AUC, preferring LogReg within 0.01. Result: CAD = LogReg, LAD = RF, LCX = RF, RCA = LogReg. The same model type is used at all 5 steps. No `class_weight="balanced"`, to keep probabilities calibrated. · Simple and explainable; RF only where it is clearly better. Selection on the same CV gives a small optimistic bias, which the report will state.
