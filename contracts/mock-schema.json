@@ -1,0 +1,792 @@
+{
+  "model_version": "mock-0.2",
+  "targets": [
+    "CAD",
+    "LAD",
+    "LCX",
+    "RCA"
+  ],
+  "vessels": [
+    {
+      "key": "LAD",
+      "name": "Left Anterior Descending",
+      "supplies": "Front of the heart"
+    },
+    {
+      "key": "LCX",
+      "name": "Left Circumflex",
+      "supplies": "Side and back of the heart"
+    },
+    {
+      "key": "RCA",
+      "name": "Right Coronary Artery",
+      "supplies": "Right side and bottom of the heart"
+    }
+  ],
+  "stages": [
+    {
+      "stage": 1,
+      "key": "history",
+      "label": "History"
+    },
+    {
+      "stage": 2,
+      "key": "exam",
+      "label": "Exam & symptoms"
+    },
+    {
+      "stage": 3,
+      "key": "ecg",
+      "label": "ECG"
+    },
+    {
+      "stage": 4,
+      "key": "labs",
+      "label": "Blood tests"
+    },
+    {
+      "stage": 5,
+      "key": "echo",
+      "label": "Echo"
+    }
+  ],
+  "features": [
+    {
+      "name": "Age",
+      "label": "Age",
+      "group": "history",
+      "type": "numeric",
+      "unit": "years",
+      "min": 30,
+      "max": 86,
+      "step": 1,
+      "default": 58
+    },
+    {
+      "name": "Sex",
+      "label": "Sex",
+      "group": "history",
+      "type": "categorical",
+      "options": [
+        "Male",
+        "Fmale"
+      ],
+      "option_labels": [
+        "Male",
+        "Female"
+      ],
+      "default": "Male"
+    },
+    {
+      "name": "BMI",
+      "label": "Body mass index",
+      "group": "history",
+      "type": "numeric",
+      "unit": "kg/m²",
+      "min": 18,
+      "max": 41,
+      "step": 0.1,
+      "default": 26.8
+    },
+    {
+      "name": "DM",
+      "label": "Diabetes",
+      "group": "history",
+      "type": "binary",
+      "options": [
+        0,
+        1
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": 0
+    },
+    {
+      "name": "HTN",
+      "label": "High blood pressure (hypertension)",
+      "group": "history",
+      "type": "binary",
+      "options": [
+        0,
+        1
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": 1
+    },
+    {
+      "name": "Current Smoker",
+      "label": "Current smoker",
+      "group": "history",
+      "type": "binary",
+      "options": [
+        0,
+        1
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": 0
+    },
+    {
+      "name": "EX-Smoker",
+      "label": "Ex-smoker",
+      "group": "history",
+      "type": "binary",
+      "options": [
+        0,
+        1
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": 0
+    },
+    {
+      "name": "FH",
+      "label": "Family history of heart disease",
+      "group": "history",
+      "type": "binary",
+      "options": [
+        0,
+        1
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": 0
+    },
+    {
+      "name": "Obesity",
+      "label": "Obesity",
+      "group": "history",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "Y"
+    },
+    {
+      "name": "CRF",
+      "label": "Chronic kidney failure",
+      "group": "history",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "CVA",
+      "label": "Previous stroke",
+      "group": "history",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "Airway disease",
+      "label": "Airway disease",
+      "group": "history",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "Thyroid Disease",
+      "label": "Thyroid disease",
+      "group": "history",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "CHF",
+      "label": "Congestive heart failure",
+      "group": "history",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "DLP",
+      "label": "High blood fats (dyslipidemia)",
+      "group": "history",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "BP",
+      "label": "Blood pressure",
+      "group": "exam",
+      "type": "numeric",
+      "unit": "mmHg",
+      "min": 90,
+      "max": 190,
+      "step": 1,
+      "default": 130
+    },
+    {
+      "name": "PR",
+      "label": "Pulse rate",
+      "group": "exam",
+      "type": "numeric",
+      "unit": "beats/min",
+      "min": 50,
+      "max": 110,
+      "step": 1,
+      "default": 70
+    },
+    {
+      "name": "Edema",
+      "label": "Swelling (edema)",
+      "group": "exam",
+      "type": "binary",
+      "options": [
+        0,
+        1
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": 0
+    },
+    {
+      "name": "Weak Peripheral Pulse",
+      "label": "Weak pulse in limbs",
+      "group": "exam",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "Lung rales",
+      "label": "Crackles in lungs (rales)",
+      "group": "exam",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "Systolic Murmur",
+      "label": "Systolic heart murmur",
+      "group": "exam",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "Diastolic Murmur",
+      "label": "Diastolic heart murmur",
+      "group": "exam",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "Typical Chest Pain",
+      "label": "Typical chest pain",
+      "group": "exam",
+      "type": "binary",
+      "options": [
+        0,
+        1
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": 1
+    },
+    {
+      "name": "Dyspnea",
+      "label": "Shortness of breath",
+      "group": "exam",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "Function Class",
+      "label": "Functional class (symptom limits)",
+      "group": "exam",
+      "type": "categorical",
+      "options": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "option_labels": [
+        "0 - none",
+        "1",
+        "2",
+        "3"
+      ],
+      "default": 0
+    },
+    {
+      "name": "Atypical",
+      "label": "Atypical chest pain",
+      "group": "exam",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "Nonanginal",
+      "label": "Non-anginal chest pain",
+      "group": "exam",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "LowTH Ang",
+      "label": "Low-threshold angina",
+      "group": "exam",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "Q Wave",
+      "label": "Q wave",
+      "group": "ecg",
+      "type": "binary",
+      "options": [
+        0,
+        1
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": 0
+    },
+    {
+      "name": "St Elevation",
+      "label": "ST elevation",
+      "group": "ecg",
+      "type": "binary",
+      "options": [
+        0,
+        1
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": 0
+    },
+    {
+      "name": "St Depression",
+      "label": "ST depression",
+      "group": "ecg",
+      "type": "binary",
+      "options": [
+        0,
+        1
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": 0
+    },
+    {
+      "name": "Tinversion",
+      "label": "T-wave inversion",
+      "group": "ecg",
+      "type": "binary",
+      "options": [
+        0,
+        1
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": 0
+    },
+    {
+      "name": "LVH",
+      "label": "Thickened heart wall (LVH)",
+      "group": "ecg",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "Poor R Progression",
+      "label": "Poor R-wave progression",
+      "group": "ecg",
+      "type": "binary",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "option_labels": [
+        "No",
+        "Yes"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "BBB",
+      "label": "Bundle branch block",
+      "group": "ecg",
+      "type": "categorical",
+      "options": [
+        "N",
+        "LBBB",
+        "RBBB"
+      ],
+      "option_labels": [
+        "None",
+        "Left",
+        "Right"
+      ],
+      "default": "N"
+    },
+    {
+      "name": "FBS",
+      "label": "Fasting blood sugar",
+      "group": "labs",
+      "type": "numeric",
+      "unit": "mg/dL",
+      "min": 62,
+      "max": 400,
+      "step": 1,
+      "default": 98
+    },
+    {
+      "name": "CR",
+      "label": "Creatinine",
+      "group": "labs",
+      "type": "numeric",
+      "unit": "mg/dL",
+      "min": 0.5,
+      "max": 2.2,
+      "step": 0.1,
+      "default": 1.0
+    },
+    {
+      "name": "TG",
+      "label": "Triglycerides",
+      "group": "labs",
+      "type": "numeric",
+      "unit": "mg/dL",
+      "min": 37,
+      "max": 1050,
+      "step": 1,
+      "default": 122
+    },
+    {
+      "name": "LDL",
+      "label": "LDL cholesterol",
+      "group": "labs",
+      "type": "numeric",
+      "unit": "mg/dL",
+      "min": 18,
+      "max": 232,
+      "step": 1,
+      "default": 100
+    },
+    {
+      "name": "HDL",
+      "label": "HDL cholesterol",
+      "group": "labs",
+      "type": "numeric",
+      "unit": "mg/dL",
+      "min": 15,
+      "max": 111,
+      "step": 1,
+      "default": 39
+    },
+    {
+      "name": "BUN",
+      "label": "Blood urea nitrogen",
+      "group": "labs",
+      "type": "numeric",
+      "unit": "mg/dL",
+      "min": 6,
+      "max": 52,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "name": "ESR",
+      "label": "ESR (inflammation marker)",
+      "group": "labs",
+      "type": "numeric",
+      "unit": "mm/h",
+      "min": 1,
+      "max": 90,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "name": "HB",
+      "label": "Hemoglobin",
+      "group": "labs",
+      "type": "numeric",
+      "unit": "g/dL",
+      "min": 8.9,
+      "max": 17.6,
+      "step": 0.1,
+      "default": 13.2
+    },
+    {
+      "name": "K",
+      "label": "Potassium",
+      "group": "labs",
+      "type": "numeric",
+      "unit": "mEq/L",
+      "min": 3.0,
+      "max": 6.6,
+      "step": 0.1,
+      "default": 4.2
+    },
+    {
+      "name": "Na",
+      "label": "Sodium",
+      "group": "labs",
+      "type": "numeric",
+      "unit": "mEq/L",
+      "min": 128,
+      "max": 156,
+      "step": 1,
+      "default": 141
+    },
+    {
+      "name": "WBC",
+      "label": "White blood cells",
+      "group": "labs",
+      "type": "numeric",
+      "unit": "cells/µL",
+      "min": 3700,
+      "max": 18000,
+      "step": 100,
+      "default": 7100
+    },
+    {
+      "name": "Lymph",
+      "label": "Lymphocytes",
+      "group": "labs",
+      "type": "numeric",
+      "unit": "%",
+      "min": 7,
+      "max": 60,
+      "step": 1,
+      "default": 32
+    },
+    {
+      "name": "Neut",
+      "label": "Neutrophils",
+      "group": "labs",
+      "type": "numeric",
+      "unit": "%",
+      "min": 32,
+      "max": 89,
+      "step": 1,
+      "default": 60
+    },
+    {
+      "name": "PLT",
+      "label": "Platelets",
+      "group": "labs",
+      "type": "numeric",
+      "unit": "×1000/µL",
+      "min": 25,
+      "max": 742,
+      "step": 1,
+      "default": 210
+    },
+    {
+      "name": "EF-TTE",
+      "label": "Ejection fraction (pumping strength)",
+      "group": "echo",
+      "type": "numeric",
+      "unit": "%",
+      "min": 15,
+      "max": 60,
+      "step": 1,
+      "default": 50
+    },
+    {
+      "name": "Region RWMA",
+      "label": "Regions with wall-motion abnormality",
+      "group": "echo",
+      "type": "categorical",
+      "options": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "option_labels": [
+        "0 - none",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "default": 0
+    },
+    {
+      "name": "VHD",
+      "label": "Valve disease",
+      "group": "echo",
+      "type": "categorical",
+      "options": [
+        "N",
+        "mild",
+        "Moderate",
+        "Severe"
+      ],
+      "option_labels": [
+        "None",
+        "Mild",
+        "Moderate",
+        "Severe"
+      ],
+      "default": "mild"
+    }
+  ],
+  "risk_bands": [
+    {
+      "band": "low",
+      "max": 0.33,
+      "color": "#2E9E6A"
+    },
+    {
+      "band": "moderate",
+      "max": 0.66,
+      "color": "#E3A008"
+    },
+    {
+      "band": "high",
+      "max": 1.0,
+      "color": "#D64545"
+    }
+  ]
+}

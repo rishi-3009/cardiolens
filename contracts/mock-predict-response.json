@@ -1,0 +1,61 @@
+{
+  "model_version": "mock-0.2",
+  "stage": 5,
+  "predictions": {
+    "CAD": { "probability": 0.82, "band": "high", "label": "CAD likely", "interval": [0.78, 0.86] },
+    "LAD": { "probability": 0.74, "band": "high", "label": "Stenosis likely", "interval": [0.69, 0.78] },
+    "LCX": { "probability": 0.41, "band": "moderate", "label": "Uncertain", "interval": [0.35, 0.47] },
+    "RCA": { "probability": 0.18, "band": "low", "label": "Stenosis unlikely", "interval": [0.14, 0.23] }
+  },
+  "vessel_count": {
+    "expected": 1.33,
+    "distribution": [0.12, 0.47, 0.30, 0.11],
+    "method": "count_model"
+  },
+  "consistency": {
+    "max_vessel_probability": 0.74,
+    "consistent": true,
+    "note": "Overall CAD estimate is at least as high as the highest vessel estimate."
+  },
+  "explanations": {
+    "CAD": {
+      "base_value": 0.71,
+      "contributions": [
+        { "feature": "Typical Chest Pain", "label": "Typical chest pain", "value": 1, "display_value": "Yes", "shap": 0.09, "direction": "increases" },
+        { "feature": "Age", "label": "Age", "value": 63, "display_value": "63 years", "shap": 0.05, "direction": "increases" },
+        { "feature": "DM", "label": "Diabetes", "value": 1, "display_value": "Yes", "shap": 0.03, "direction": "increases" },
+        { "feature": "EF-TTE", "label": "Ejection fraction (pumping strength)", "value": 55, "display_value": "55 %", "shap": -0.04, "direction": "decreases" },
+        { "feature": "BP", "label": "Blood pressure", "value": 140, "display_value": "140 mmHg", "shap": -0.02, "direction": "decreases" }
+      ]
+    },
+    "LAD": {
+      "base_value": 0.58,
+      "contributions": [
+        { "feature": "Typical Chest Pain", "label": "Typical chest pain", "value": 1, "display_value": "Yes", "shap": 0.14, "direction": "increases" },
+        { "feature": "Age", "label": "Age", "value": 63, "display_value": "63 years", "shap": 0.08, "direction": "increases" },
+        { "feature": "Tinversion", "label": "T-wave inversion", "value": 1, "display_value": "Yes", "shap": 0.06, "direction": "increases" },
+        { "feature": "EF-TTE", "label": "Ejection fraction (pumping strength)", "value": 55, "display_value": "55 %", "shap": 0.01, "direction": "increases" }
+      ]
+    },
+    "LCX": {
+      "base_value": 0.39,
+      "contributions": [
+        { "feature": "Age", "label": "Age", "value": 63, "display_value": "63 years", "shap": 0.05, "direction": "increases" },
+        { "feature": "DM", "label": "Diabetes", "value": 1, "display_value": "Yes", "shap": 0.04, "direction": "increases" },
+        { "feature": "FBS", "label": "Fasting blood sugar", "value": 110, "display_value": "110 mg/dL", "shap": 0.02, "direction": "increases" },
+        { "feature": "HDL", "label": "HDL cholesterol", "value": 45, "display_value": "45 mg/dL", "shap": -0.02, "direction": "decreases" }
+      ]
+    },
+    "RCA": {
+      "base_value": 0.38,
+      "contributions": [
+        { "feature": "Age", "label": "Age", "value": 63, "display_value": "63 years", "shap": 0.03, "direction": "increases" },
+        { "feature": "Typical Chest Pain", "label": "Typical chest pain", "value": 1, "display_value": "Yes", "shap": -0.06, "direction": "decreases" },
+        { "feature": "EF-TTE", "label": "Ejection fraction (pumping strength)", "value": 55, "display_value": "55 %", "shap": -0.08, "direction": "decreases" },
+        { "feature": "BP", "label": "Blood pressure", "value": 140, "display_value": "140 mmHg", "shap": -0.04, "direction": "decreases" }
+      ]
+    }
+  },
+  "warnings": ["Mock data — not a real prediction."],
+  "disclaimer": "For decision support and educational purposes only. Not a substitute for formal diagnostic imaging or a clinician's judgement."
+}

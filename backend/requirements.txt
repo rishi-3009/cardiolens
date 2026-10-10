@@ -1,0 +1,10 @@
+# Backend libraries (Python 3.11). Install with:  pip install -r requirements.txt
+# Versions are pinned (==) so every laptop gets exactly the same setup.
+pandas==3.0.6           # tables (load + clean the dataset)
+openpyxl==3.1.5         # lets pandas read the .xlsx dataset file
+numpy==2.4.6            # number crunching (used by everything below)
+scikit-learn==1.9.1     # ML models, pipelines, cross-validation, metrics
+shap==0.51.0            # explains each prediction (which inputs pushed risk up/down)
+joblib==1.6.0           # save/load trained models to disk
+fastapi==0.143.0        # the web API the frontend calls
+uvicorn==0.54.0         # runs the FastAPI server
