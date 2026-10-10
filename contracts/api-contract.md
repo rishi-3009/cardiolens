@@ -1,6 +1,6 @@
 # API Contract — backend (Rishi) ↔ frontend (Harshavi)
 
-**Version: 0.2 (ready to freeze as 1.0 — both review tonight).**
+**Version: 1.0 (frozen 2026-10-10 by Rishi + Harshavi).**
 Any change: edit this file, bump the version, add a line in `docs/decisions.md`, tell the other person.
 
 Base URL during development: `http://localhost:8000`. All responses are JSON.

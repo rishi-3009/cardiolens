@@ -6,12 +6,9 @@ Update this when you start, finish, or get stuck on something. Claude Code agent
 | Who | Working on | State | Notes |
 |---|---|---|---|
 | Harshavi | Setup + idea | 🟡 in progress | |
-| Rishi | Contract v0.2 + `backend/src/config.py` | 🟢 done | Waiting for Harshavi's review → freeze as v1.0 tonight. Next: leakage-safe training pipeline (`src/data.py`, `src/train.py`) |
+| Rishi | Training pipeline (`src/data.py`, `src/train.py`) | 🟡 in progress | Contract v1.0 frozen |
 
 ## Blocked / needs the other person
-- **Harshavi:** please review `contracts/api-contract.md` v0.2 (changes listed in `docs/decisions.md`).
-  New mock files are ready: `contracts/mock-schema.json` (real 52 features, 5 steps) and the updated
-  `contracts/mock-predict-response.json`. Freeze as v1.0 together tonight.
 - **Harshavi:** accept the GitHub invite to the private repo https://github.com/rishi-3009/cardiolens
   (sent to `harshavi3009`; check email or github.com/notifications), then
   `git clone https://github.com/rishi-3009/cardiolens.git`.

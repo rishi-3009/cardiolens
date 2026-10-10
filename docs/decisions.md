@@ -19,3 +19,4 @@ Format: `YYYY-MM-DD · who · decision · why`
   - new `contracts/mock-schema.json`, generated from `backend/src/config.py`; the mock prediction updated to match.
 
   All additions are optional fields, so code built on v0.1 still works. · Needed for directions A + D + E.
+- 2026-10-10 · both · **API contract frozen as v1.0** (same content as v0.2). · From now on any change needs a version bump + a line here + telling the other person.
